@@ -23,11 +23,8 @@ RUN curl -sL https://deb.nodesource.com/setup_9.x | bash -
 RUN apt-get install --no-install-recommends -y nodejs \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
-#RUN npm install -g grpcc
 
-# RUN useradd -d /home/node -m -s /bin/bash node
-# USER node
+#requires unsafe due to npm having permission problems from "unnamed" user
 RUN npm install -g grpcc --unsafe
 
-#RUN npm install -g grpcc
 CMD ["tail", "-F", "-n0", "/etc/hosts"]
