@@ -1,6 +1,7 @@
 #!/bin/bash
 
 dockerRepo=""
+imagePath="andresvilla/utility-image"
 
 while [[ $# -gt 1 ]]
 do
@@ -9,6 +10,10 @@ key="$1"
 case $key in
     -d|--docker-repo)
     dockerRepo="$2"
+    shift # past argument
+    ;;
+    -p|--image-path)
+    imagePath="$2"
     shift # past argument
     ;;
     *)
@@ -20,7 +25,7 @@ done
 
 date=$(date +%s)
 buildVersion="$date"
-imageName=${dockerRepo}andresvilla/utility-image
+imageName=${dockerRepo}${imagePath}
 docker build -t "${imageName}:${buildVersion}" -t "${imageName}:latest" .
 
 echo "image: ${imageName}:${buildVersion}"

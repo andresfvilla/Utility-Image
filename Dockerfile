@@ -17,11 +17,11 @@ RUN apt-get update \
      nodejs \
      npm \
      python \
+     vim \
     && rm -rf /var/lib/apt/lists/*
 
 RUN curl -sL https://deb.nodesource.com/setup_9.x | bash -
 RUN apt-get install --no-install-recommends -y nodejs \
-    && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 #requires unsafe due to npm having permission problems from "unnamed" user

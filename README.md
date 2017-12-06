@@ -13,3 +13,4 @@ A Docker image that contains useful tools for debugging/testing micro-services a
 1. node(v9.3) - for any necessary nodejs apps 
 1. mtr - investigates connection between host running mtr and another host
 1. python - used for basic scripts
+1. vim - file editor
