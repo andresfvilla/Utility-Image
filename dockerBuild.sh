@@ -20,7 +20,7 @@ done
 
 date=$(date +%s)
 buildVersion="$date"
-imageName=${dockerRepo}/andresvilla/Utility-Image
+imageName=${dockerRepo}andresvilla/utility-image
 docker build -t "${imageName}:${buildVersion}" -t "${imageName}:latest" .
 
 echo "image: ${imageName}:${buildVersion}"
