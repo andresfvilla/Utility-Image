@@ -27,6 +27,13 @@ date=$(date +%s)
 buildVersion="$date"
 imageName=${dockerRepo}${imagePath}
 docker build -t "${imageName}:${buildVersion}" -t "${imageName}:latest" .
+buildResult=$?
+if [ $buildResult -eq 0 ]; then
+    echo "Docker build succeeded"
+else
+  echo "Docker build failed"
+  exit 1
+fi
 
 echo "image: ${imageName}:${buildVersion}"
 

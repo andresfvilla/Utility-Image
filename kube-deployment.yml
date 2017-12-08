@@ -4,9 +4,30 @@ metadata:
   name: utility-image
   labels:
     name: utility-image
+  # annotations:
+  #   scheduler.alpha.kubernetes.io/tolerations: |
+  #     [
+  #       {
+  #         "key": "dedicated",
+  #         "operator": "Equal",
+  #         "value": "gpu-task"
+  #       }
+  #     ]
 spec:
+  # Uncomment the following lines in order to claim a gpu node for CUDA usage (kube >1.7.4)
+  # tolerations:
+  #   - key: dedicated
+  #     operator: Equal
+  #     value: gpu-task
+  #     effect: NoSchedule
+
+  #Uncomment the following lines in order to claim a gpu node for CUDA usage (kube <1.7.4)
+  
   imagePullSecrets:
         - name: us-south-wdcloud-token
   containers:
   - name: utility-image
-    image: 'registry.ng.bluemix.net/wdcloud/utility-image:1512598270'
+    image: 'andresvilla/utility-image:latest' #'registry.ng.bluemix.net/wdcloud/utility-image:1512679786'
+    # resources:
+    #   limits:
+    #     alpha.kubernetes.io/nvidia-gpu: 1
