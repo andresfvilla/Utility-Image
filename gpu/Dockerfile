@@ -6,7 +6,7 @@ COPY cuda-repo-ubuntu1604_9.0.176-1_amd64.deb /opt/cuda-repo-ubuntu1604_9.0.176-
 RUN dpkg -i /opt/cuda-repo-ubuntu1604_9.0.176-1_amd64.deb \
     && apt-get update \
     && apt-get install -y --allow-unauthenticated \
-     cuda-toolkit-8-0 \
+     cuda \
     && rm -rf /var/lib/apt/lists/*
 
 CMD ["tail", "-F", "-n0", "/etc/hosts"]
