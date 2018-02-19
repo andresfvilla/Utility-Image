@@ -12,6 +12,7 @@ RUN apt-get update \
      default-jdk \
      dnsutils \
      iperf \
+     iputils-ping \
      kmod \
      mtr \
      netcat \
