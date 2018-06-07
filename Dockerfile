@@ -18,6 +18,7 @@ RUN apt-get update \
      netcat \
      nodejs \
      npm \
+     openssh-server \
      python \
      python-pip \
      vim \
