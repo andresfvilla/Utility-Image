@@ -19,6 +19,7 @@ RUN apt-get update \
      nodejs \
      npm \
      python \
+     python-pip \
      vim \
      wget \
     && rm -rf /var/lib/apt/lists/*
