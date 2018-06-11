@@ -35,4 +35,7 @@ RUN apt-get update \
 #requires unsafe due to npm having permission problems from "unnamed" user
 RUN npm install -g grpcc --unsafe
 
+#Upgrade pip
+RUN pip install --upgrade pip
+
 CMD ["tail", "-F", "-n0", "/etc/hosts"]
