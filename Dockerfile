@@ -16,6 +16,7 @@ RUN apt-get update \
      kmod \
      mtr \
      netcat \
+     nginx \
      nodejs \
      npm \
      openssh-server \
