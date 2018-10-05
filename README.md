@@ -23,4 +23,4 @@ A Docker image that contains useful tools for debugging/testing micro-services a
 
 ## Nvidia Image
 
-Due to the cuda packages being very large and increasing the image size by over 3 times, the image is separate and will be 
+Due to the cuda packages being very large and increasing the image size by over 3 times, the image will be built separately
