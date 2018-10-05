@@ -14,10 +14,12 @@ A Docker image that contains useful tools for debugging/testing micro-services a
 1. netcat - Used for writing and reading from network connections
 1. nginx - create webserver for testing routing
 1. node(v9.3) - for any necessary nodejs apps 
-1. nvidia - testing gpu assignments to containers
+1. nvidia* - testing gpu assignments to containers
 1. python - used for basic scripts
 1. vim - file editor
 1. wget - retrieving web content
+
+\* - Requires GPU image
 
 ## Nvidia Image
 

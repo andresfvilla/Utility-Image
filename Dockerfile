@@ -1,4 +1,5 @@
-FROM ubuntu:16.04
+ARG BASE_IMAGE=ubuntu:16.04
+FROM $BASE_IMAGE
 MAINTAINER Andres Villa <andresfvilla88@gmail.com>
 
 #Install dependencies

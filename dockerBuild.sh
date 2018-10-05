@@ -27,13 +27,13 @@ date=$(date +%s)
 buildVersion="$date"
 imageName=${dockerRepo}${imagePath}
 
-#Build regular image
+#Build Standard image
 docker build -t "${imageName}:${buildVersion}" -t "${imageName}:latest" .
 buildResult=$?
-printf "\n\n\n\n==============FINISHED REGULAR BUILD==============\n\n\n\n"
+printf "\n\n\n\n==============FINISHED Standard BUILD==============\n\n\n\n"
 
 #Build gpu image
-docker build -t "${imageName}-gpu:${buildVersion}" -t "${imageName}-gpu:latest" ./gpu
+docker build -t "${imageName}-gpu:${buildVersion}" -t "${imageName}-gpu:latest" . --build-arg BASE_IMAGE="nvidia/cuda:9.0-cudnn7-runtime-ubuntu16.04"
 gpuBuildResult=$?
 printf "\n\n\n\n==============FINISHED GPU BUILD==============\n\n\n\n"
 
