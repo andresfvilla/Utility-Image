@@ -12,6 +12,7 @@ A Docker image that contains useful tools for debugging/testing micro-services a
 1. java - for any necessary java apps
 1. mtr - investigates connection between host running mtr and another host
 1. netcat - Used for writing and reading from network connections
+1. nginx - Testing http via a webserver
 1. node(v9.3) - for any necessary nodejs apps 
 1. nvidia - testing gpu assignments to containers
 1. python - used for basic scripts
