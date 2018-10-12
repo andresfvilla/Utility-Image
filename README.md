@@ -24,3 +24,7 @@ A Docker image that contains useful tools for debugging/testing micro-services a
 ## Nvidia Image
 
 Due to the cuda packages being very large and increasing the image size by over 3 times, the image will be built separately
+
+## Building Latest Image
+
+Run `dockerBuild.sh` This will begin the build for the standard and GPU based image
