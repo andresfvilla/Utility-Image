@@ -23,6 +23,7 @@ RUN apt-get update \
      openssh-server \
      python \
      python-pip \
+     redis-tools \
      vim \
      wget \
     && rm -rf /var/lib/apt/lists/*
