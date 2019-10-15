@@ -4,7 +4,6 @@ metadata:
   name: utility-image-gpu
   labels:
     name: utility-image-gpu
-  # Uncomment the following lines in order to claim a gpu node for CUDA usage (kube <1.7.4)
   annotations:
     scheduler.alpha.kubernetes.io/tolerations: |
       [
@@ -15,12 +14,12 @@ metadata:
         }
       ]
 spec:
-  # Uncomment the following lines in order to claim a gpu node for CUDA usage (kube >1.7.4)
-  # tolerations:
-  #   - key: dedicated
-  #     operator: Equal
-  #     value: gpu-task
-  #     effect: NoSchedule  
+  # Taints for nodes will differ per kubernetes cluster
+  tolerations:
+    - key: dedicated
+      operator: Equal
+      value: gpu-task
+      effect: NoSchedule  
   imagePullSecrets:
         - name: us-south-wdcloud-token
   containers:
