@@ -15,12 +15,14 @@ RUN apt-get update \
      iperf \
      iputils-ping \
      kmod \
+     mongodb \
      mtr \
      netcat \
      nginx \
      nodejs \
      npm \
      openssh-server \
+     postgresql \
      python \
      python-pip \
      redis-tools \
