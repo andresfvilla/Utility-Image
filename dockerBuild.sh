@@ -2,11 +2,10 @@
 
 dockerRepo=""
 imagePath="andresvilla/utility-image"
-
+buildAll=""
 while [[ $# -gt 1 ]]
 do
 key="$1"
-
 case $key in
     -d|--docker-repo)
     dockerRepo="$2"
@@ -14,6 +13,10 @@ case $key in
     ;;
     -p|--image-path)
     imagePath="$2"
+    shift # past argument
+    ;;
+    -b|--build-all)
+    buildAll="Y"
     shift # past argument
     ;;
     *)
@@ -47,12 +50,18 @@ echo "image: ${imageName}:${buildVersion}"
 echo "image: ${imageName}-gpu:${buildVersion}"
 
 while true; do
-    read -p "Do you want to push these versions?:" yn
-    case $yn in
-        [Yy]* ) docker push "${imageName}:${buildVersion}"
-                docker push "${imageName}-gpu:${buildVersion}"
-                exit;;
-        [Nn]* ) break;;
-        * ) echo "Please answer y or n.";;
-    esac
+    if [[ -z $buildAll ]]; then
+        read -p "Do you want to push these versions?:" yn
+        case $yn in
+            [Yy]* ) docker push "${imageName}:${buildVersion}"
+                    docker push "${imageName}-gpu:${buildVersion}"
+                    exit;;
+            [Nn]* ) break;;
+            * ) echo "Please answer y or n.";;
+        esac
+    else
+        docker push "${imageName}:${buildVersion}"
+        docker push "${imageName}-gpu:${buildVersion}"
+        break
+    fi
 done
